@@ -15,6 +15,7 @@ func _get_uuid() (uint64, bool) {
     var ms uint64 = uint64( time.Now().UnixNano()/1e6)
     ms <<= 20
     ms &^= 0xFFFFF
+    
     if _last_ms != ms {
         _last_ms = ms
         _index = 0
